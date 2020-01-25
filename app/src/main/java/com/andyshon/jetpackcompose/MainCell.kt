@@ -21,7 +21,7 @@ import androidx.ui.text.font.FontWeight
 fun drawCell(
     model: MainContentModel,
     onInfoClick: ((model: MainContentModel) -> Unit)? = null,
-    onShareClick: ((model: MainContentModel) -> Unit)? = null
+    onDeleteClick: ((model: MainContentModel) -> Unit)? = null
 ) {
     Card(
         shape = RoundedCornerShape(
@@ -86,11 +86,11 @@ fun drawCell(
 
                     Button(
                         onClick = {
-                            onShareClick?.invoke(model)
+                            onDeleteClick?.invoke(model)
                         },
                         style = TextButtonStyle()
                     ) {
-                        Text("Share")
+                        Text("Delete")
                     }
                 }
             }
