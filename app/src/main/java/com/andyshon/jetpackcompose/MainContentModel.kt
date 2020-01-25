@@ -1,3 +1,7 @@
 package com.andyshon.jetpackcompose
 
-data class MainContentModel(val title: String, val image: Int)
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
+data class MainContentModel(val title: String, val image: Int): Parcelable

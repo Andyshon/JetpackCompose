@@ -2,7 +2,6 @@ package com.andyshon.jetpackcompose
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
 import androidx.compose.*
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -80,7 +79,7 @@ class MainActivity : AppCompatActivity() {
         items.forEach {
             Padding(left = 16.dp, right = 16.dp, bottom = 8.dp, top = 8.dp) {
                 drawCell(it, onInfoClick = { item ->
-                    Toast.makeText(this@MainActivity, item.title, Toast.LENGTH_SHORT).show()
+                    DetailActivity.startActivity(this@MainActivity, item)
                 }, onDeleteClick = { item ->
                     viewModel.deleteItem(item)
                 })
